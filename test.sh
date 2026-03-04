@@ -422,6 +422,10 @@ c name
 c void
 131 LESSCOLORIZER='e2ansi-cat --theme=modus-vivendi' less $T/tests/test.c		# allow setting e2ansi-cat theme option, needs e2ansi-cat
 c void
+132 LESSCOLORIZER=e2ansi-cat less tests/filter.tgz:test.c		# C language from file within archive (e2ansi-cat), needs e2ansi-cat
+c void
+133 LESSCOLORIZER=e2ansi-cat less tests/test.json:javascript		# JSON opened as JavaScript (e2ansi-cat), needs e2ansi-cat
+c true
 EOF
 #echo $tests|sed -E '/^[0-9]+ /s/(^[0-9]+).*/\1/'|grep '^[0-9]'|tail -1
 # Process tests

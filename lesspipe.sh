@@ -533,7 +533,12 @@ has_colorizer () {
 		e2ansi-cat)
 			opt2=${LESSCOLORIZER##*--}
 			[[ $opt2 == theme=* ]] && theme=${opt2##*=}
-			opt=(${theme:+--theme "$theme"} ${3:+--mode "$3"})
+			if [[ -n $3 ]]; then
+				mode="$2"
+			else
+				mode=
+			fi
+			opt=(${theme:+--theme "$theme"} ${mode:+--mode "$mode"})
 			opt+=("$1") ;;
 		*)
 			return ;;
